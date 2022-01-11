@@ -1,5 +1,13 @@
+import java.util.UUID;
+
 public class Begriff {
-    public int id;
-    public string begriff;
-    public string definition;
+    public UUID id;
+    public String begriff;
+    public String definition;
+
+    public Begriff(String begriff, String definition){
+        id = UUID.randomUUID();
+        begriff = this.begriff;
+        definition = this.definition;
+    }
 }
