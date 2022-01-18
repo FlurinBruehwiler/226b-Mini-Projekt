@@ -19,16 +19,4 @@ public class Lernset {
     public void removeBegriff(Begriff _begriff){
         begriffe.remove(_begriff);
     }
-
-    public void removeBegriff(UUID id){
-        Begriff _begriff = null;
-        for (Begriff b: begriffe) {
-            if(b.id == id){
-                _begriff = b;
-            }
-        }
-        if(_begriff != null){
-            begriffe.remove(_begriff) ;
-        }
-    }
 }

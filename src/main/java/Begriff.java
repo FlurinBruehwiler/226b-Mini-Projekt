@@ -1,12 +1,12 @@
-import java.util.UUID;
-
 public class Begriff {
-    public UUID id;
     public String begriff;
     public String definition;
+    public POOL pool;
+    public int repeatetFalse;
 
     public Begriff(String begriff, String definition){
-        id = UUID.randomUUID();
+        pool = null;
+        repeatetFalse = 0;
         begriff = this.begriff;
         definition = this.definition;
     }
