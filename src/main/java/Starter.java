@@ -5,8 +5,9 @@ public class Starter {
 
         Cache objCache = new Cache();
         Reader reader = new Reader(objCache);
-        reader.readLernsetFiles("C:/Users/henrik.faeh/Documents/GitHub/226b-Mini-Projekt/Lernsets");
-
-
+        reader.readLernsetFiles("E:\\Unity\\226b-Mini-Projekt\\Lernsets");
+        for (Begriff begriff : objCache.lernsets.get(0).begriffe) {
+            System.out.println("Begriff: " + begriff.begriff + ", Definition: " + begriff.definition);
+        }
     }
 }
