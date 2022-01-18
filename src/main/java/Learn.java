@@ -1,3 +1,4 @@
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Random;
@@ -12,19 +13,29 @@ public class Learn {
         this.lernset = lernset;
     }
 
-    public void startLearn(){
+    public void startLearn() throws IOException {
         Scanner scan = new Scanner(System.in);
         while(true){
             Card aktuellerBegriff = poolManager.nextCard();
+            boolean result;
             if(aktuellerBegriff.pool == POOL.multipleChoice){
-                multipleChoice(aktuellerBegriff, scan);
+                result = multipleChoice(aktuellerBegriff, scan);
             }else{
-                schriftlich(aktuellerBegriff, scan);
+                result = schriftlich(aktuellerBegriff, scan);
             }
+
+            if(result){
+                System.out.println("Richtig!!!");
+            }else{
+                System.out.println("Das war falsch, richt währe gewesen: " + aktuellerBegriff.definition);
+                System.out.print("Tippen sie die richtige Antwort ein: ");
+            }
+
+            poolManager.moveBegriff(aktuellerBegriff, result);
         }
     }
 
-    private void multipleChoice(Card card, Scanner scan){
+    private boolean multipleChoice(Card card, Scanner scan){
         System.out.println("----------------------------");
         System.out.println("------Multiple Choice-------");
         System.out.println("----------------------------\n");
@@ -33,21 +44,14 @@ public class Learn {
         System.out.println("Mögliche Definitionen: ");
         int correctCard = displayCards(card);
 
-        System.out.println("Wähle die richtige Definition aus");
+        System.out.print("Wähle die richtige Definition aus: ");
 
         int choice = scan.nextInt();
-        boolean result = choice == correctCard;
-
-        if(result){
-            System.out.println("Richtig!!!");
-        }else{
-            System.out.println("Das war falsch, richt währe gewesen: " + card.definition);
-        }
-
-        poolManager.moveBegriff(card, result);
+        return choice == correctCard;
     }
 
-    private void schriftlich(Card card, Scanner scan){
+
+    private boolean schriftlich(Card card, Scanner scan){
         System.out.println("----------------------------");
         System.out.println("--------Schriftlich---------");
         System.out.println("----------------------------\n");
@@ -56,15 +60,7 @@ public class Learn {
         System.out.print("Geben sie die Definition ein: ");
 
         String input = scan.nextLine();
-        boolean result = input == card.definition;
-
-        if(result){
-            System.out.println("Richtig!!!");
-        }else{
-            System.out.println("Das war falsch, richt währe gewesen: " + card.definition);
-        }
-
-        poolManager.moveBegriff(card, result);
+        return input == card.definition;
     }
 
     private int displayCards(Card begriff){
