@@ -9,13 +9,13 @@ public class Learn {
 
     public Learn(Lernset lernset){
         poolManager = new PoolManager(lernset);
-        lernset = this.lernset;
+        this.lernset = lernset;
     }
 
     public void startLearn(){
         Scanner scan = new Scanner(System.in);
         while(true){
-            Begriff aktuellerBegriff = poolManager.nextCard();
+            Card aktuellerBegriff = poolManager.nextCard();
             if(aktuellerBegriff.pool == POOL.multipleChoice){
                 multipleChoice(aktuellerBegriff, scan);
             }else{
@@ -24,40 +24,77 @@ public class Learn {
         }
     }
 
-    private void multipleChoice(Begriff begriff, Scanner scan){
+    private void multipleChoice(Card card, Scanner scan){
         System.out.println("----------------------------");
         System.out.println("------Multiple Choice-------");
-        System.out.println("----------------------------");
-        displayCards(begriff);
+        System.out.println("----------------------------\n");
 
+        System.out.println("Begriff: " + card.begriff);
+        System.out.println("Mögliche Definitionen: ");
+        int correctCard = displayCards(card);
+
+        System.out.println("Wähle die richtige Definition aus");
+
+        int choice = scan.nextInt();
+        boolean result = choice == correctCard;
+
+        if(result){
+            System.out.println("Richtig!!!");
+        }else{
+            System.out.println("Das war falsch, richt währe gewesen: " + card.definition);
+        }
+
+        poolManager.moveBegriff(card, result);
     }
 
-    private void schriftlich(Begriff begriff, Scanner scan){
+    private void schriftlich(Card card, Scanner scan){
         System.out.println("----------------------------");
         System.out.println("--------Schriftlich---------");
-        System.out.println("----------------------------");
+        System.out.println("----------------------------\n");
+
+        System.out.println("Begriff: " + card.begriff);
+        System.out.print("Geben sie die Definition ein: ");
+
+        String input = scan.nextLine();
+        boolean result = input == card.definition;
+
+        if(result){
+            System.out.println("Richtig!!!");
+        }else{
+            System.out.println("Das war falsch, richt währe gewesen: " + card.definition);
+        }
+
+        poolManager.moveBegriff(card, result);
     }
 
-    private void displayCards(Begriff begriff){
-        ArrayList<Begriff> begriffe = getRandomBegriffe(begriff, 3);
+    private int displayCards(Card begriff){
+        ArrayList<Card> begriffe = getRandomBegriffe(begriff, 3);
         begriffe.add(begriff);
         Collections.shuffle(begriffe);
 
+        int correctCard = -1;
+
         for(int i = 0; i < begriffe.size(); i++){
             displayCard(begriffe.get(i), i);
+
+            if(begriffe.get(i) == begriff){
+                correctCard = i + 1;
+            }
         }
+
+        return correctCard;
     }
 
-    private void displayCard(Begriff begriff, int index){
+    private void displayCard(Card begriff, int index){
         System.out.println((index + 1) + ". " + begriff.definition);
     }
 
-    ArrayList<Begriff> getRandomBegriffe(Begriff begriffNotToInclude, int amount){
+    ArrayList<Card> getRandomBegriffe(Card begriffNotToInclude, int amount){
         Random rand = new Random();
-        ArrayList<Begriff> begriffe = new ArrayList<>();
+        ArrayList<Card> begriffe = new ArrayList<>();
 
         while(begriffe.size() < amount){
-            Begriff b = lernset.begriffe.get(rand.nextInt(lernset.begriffe.size() - 1));
+            Card b = lernset.begriffe.get(rand.nextInt(lernset.begriffe.size() - 1));
             if(!begriffNotToInclude.equals(b)){
                 begriffe.add(b);
             }

@@ -10,13 +10,9 @@ public class Reader{
 
     public void readLernsetFiles(String path) throws IOException {
         File folder = new File(path);
-        if(folder.listFiles() == null){
-            System.out.println("null");
-        }else {
-            for (final File fileEntry : folder.listFiles()) {
-                System.out.println(fileEntry.getName());
-                readLernset(path + "\\" + fileEntry.getName());
-            }
+
+        for (final File fileEntry : folder.listFiles()) {
+            readLernset(path + "\\" + fileEntry.getName());
         }
     }
 
@@ -25,11 +21,11 @@ public class Reader{
         Lernset lernset = new Lernset();
         String currentLine;
         while((currentLine = reader.readLine()) != null){
-            var temp = currentLine.split(" ");
-            Begriff begriff = new Begriff(temp[0], temp[1]);
+            var temp = currentLine.split("\\*");
+            Card begriff = new Card(temp[1], temp[0]);
             lernset.addBegriff(begriff);
-            objCache.lernsets.add(lernset);
         }
+        objCache.lernsets.add(lernset);
 
         reader.close();
     }

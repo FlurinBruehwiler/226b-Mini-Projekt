@@ -1,22 +1,183 @@
-Aller irai
-apercevoir apercevrai
-avoir aurai
-s'asseoir assiérai
-courir courrai
-cueillir cueillerai
-devoir devrai
-envoyer enverrai
-etre serai
-faire ferai
-falloir faudrai
-mourir mourrai
-pleuvoir pleuvrai
-pouvoir pourrai
-recevoir recevrai
-savoir saurai
-tenir tiendrai
-valoir vaudrai
-venir viendrai
-revenir reviendrai
-voir verrai
-vouloir voudrai
+la poste*die Post
+envoyer*schicken, senden
+la lettre*der Brief
+cher/chère*lieb
+Mesdames, Messieurs!*Sehr geehrte Damen und Herren
+le timbre*die Briefmarke
+le paquet*das Paket
+poster*aufgeben, einwerfen
+le code postal, codes postaux*die Postleitzahl
+la boîte*der Briefkasten
+le port*das Porto
+l'enveloppe f*der Umschlag
+l'expéditeur, l'expéditrice*der Absender, die Absenderin
+remettre*zustellen
+la remise*die Zustellung
+le renseignement*die Information
+informer*informieren
+le journal, les journaux*die Zeitung
+le quotidien*die Tageszeitung
+le magazine*die Zeitschrift
+la revue*die Zeitschrift, die Illustrierte
+l'article m*der Artikel
+l'édition f*die Ausgabe
+l'abonnement m*das Abonnement
+s'abonner à*abonnieren
+la radio*das Radio
+la télévision*das Fernsehen, der Fernseher
+regarder la télévision*fernsehen
+transmettre*senden
+l'émission f*die Sendung
+le programme*das Programm
+la chaîne*der Sender
+les informations*die Nachrichten
+le spot publicitaire*der Werbespot
+vrai, vraie*wahr
+la vérité*die Wahrheit
+la presse*die Presse
+le reportage*die Reportage, der Bericht
+l'interview f*das Interview
+la une*die Titelseite
+le gros titre*die Schlagzeile
+la station*der Sender
+l'image f*das Bild
+en direct*live
+la réalité*die Wirklichkeit
+le fait*die Tatsache
+objectif, objective*objektiv
+incroyable*unglaublich
+le téléphone*das Telefon
+téléphoner*telefonieren
+téléphoner à*anrufen
+le numéro de téléphone*die Telefonnummer
+le portable*das Handy
+le numéro de portable*die Handynummer
+le SMS*die SMS
+écrire des textos*simsen
+composer*wählen
+se tromper de numéro*sich verwählen
+le coup de fil*der Anruf
+le message*die Nachricht
+le répondeur*der Anrufbeantworter
+répondre*sich melden, ans Telefon gehen
+allô*hallo
+Qui est à l'appareil?*Wer ist am Apparat?
+Au revoir!*Auf Wiederhören!
+occupé, occupée*besetzt
+passer*verbinden mit, durchstellen zu
+rappeler*zurückrufen
+l'indicatif m*die Vorwahl
+le wifi*das WLAN
+l'e-mail m*die E-Mail
+l'adresse e-mail*die E-Mail-Adresse
+le lettre d'information*der Newsletter
+la pièce jointe*der Anhang
+l'Internet*das Internet
+surfer sur Internet*im Internet surfen
+chercher sur Google*googeln
+en ligne*online
+la banque en ligne*das Onlinebanking
+la boutique en ligne*der Onlineshop
+hors connexion*offline
+le lien*der Link
+télécharger*herunterladen
+le navigateur*der Browser
+le serveur*der Server
+la ligne*die Leitung
+sonner*klingeln
+la sonnerie*der Klingelton
+décrocher*abnehmen, ans Telefon gehen, sich melden
+raccrocher*auflegen
+la communication interurbaine*das Ferngespräch
+la communication locale*das Ortsgespräch
+la messagerie vocale*die Mailbox
+le numéro direct*die Durchwahl
+le MMS*die MMS
+le smartphone*das Smartphone
+l'appli f*die App
+le livre numérique*das E-Book
+la carte SIM*die SIM-Karte
+le kit mains libres, les kits mains libres*die Freisprechanlage
+le réseau fixe, les réseaux fixes*das Festnetz
+le réseau de téléphonie mobile, les réseaux de téléphonie mobile*das Mobilfunknetz
+le forfait illimité*die Flatrate
+le réseau social, les réseaux sociaux*das soziale Netzwerk
+skyper*skypen
+tweeter*twittern
+l'arobase m*das @-Zeichen, das At-Zeichen
+le compte de courrier*der E-Mail-Account
+le courrier indésirable*die Junkmail
+le filtre anti-spam*der Spamfilter
+le fournisseur*der (Internet-)Provider
+le moteur de recherche*die Suchmaschine
+la page d'accueil*die Homepage
+le site web*die Website, der Internetauftritt
+le blog*der Blog
+bloguer*bloggen
+le blogueur, la blogueuse*der Blogger
+la conversation en ligne*der Chat
+bavarder en ligne*chatten
+la connexion*das Log-in
+se connecter*sich einloggen
+se déconnecter*sich ausloggen
+le nom d'utilisateur*der Benutzername
+le cookie*der Cookie
+le mot-dièse*der Hashtag
+l'ordinateur m*der Computer
+le PC*der PC
+le logiciel*die Software
+le matériel, les matériaux*die Hardware
+le clavier*die Tastatur
+l'écran m*der Bildschirm
+l'imprimante f*der Drucker
+imprimer*drucken
+la touche*die Taste
+la souris*die Maus
+le bouton de la souris*die Maustaste
+le curseur*der Cursor
+cliquer*klicken
+le clic de souris*der Mausklick
+le double-clic*der Doppelklick
+le menu*das Menü
+les données f*die Daten
+le fichier*die Datei
+le dossier*der Ordner
+entrer*eingeben
+installer*installieren
+désinstaller*deinstallieren
+éteindre*herunterfahren
+démarrer*hochfahren
+mémoriser*speichern
+copier*kopieren
+insérer*einfügen
+supprimer*löschen
+enregistrer*aufnehmen
+l'ordinateur portable m*der Laptop, das Notebook
+la tablette*das Tablet
+l'écran tactile m*der Touchscreen
+le pavé tactile*das Touchpad
+le bureau*der Desktop
+l'icône f*das Icon
+le tapis de souris*das Mauspad
+le système d'exploitation*das Betriebssystem
+le ludiciel*das Computerspiel
+la base de données*die Datenbank
+numérique*digital
+virtuel, virtuelle*virtuell
+interactif, interactive*interaktiv
+multimédia*Multimedia-, multimedial
+la sauvegarde*die Sicherheitskopie
+redémarrer*neu starten
+faire défiler*scrollen
+le mot de passe*das Passwort
+le message d'erreur*die Fehlermeldung
+la capture d'écran*der Screenshot
+l'antivirus m*der Virenscanner
+le scanner*der Scanner
+scanner*scannen
+le virus informatique*das Computervirus
+la clé USB*der USB-Stick
+le disque dur*die Festplatte
+le pirate*der Hacker
+pirater*hacken
+programmer*programmieren

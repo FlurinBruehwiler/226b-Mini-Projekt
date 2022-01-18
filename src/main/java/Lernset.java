@@ -1,22 +1,21 @@
 import java.util.ArrayList;
-import java.util.UUID;
 
 public class Lernset {
-    ArrayList<Begriff> begriffe;
+    ArrayList<Card> begriffe;
 
     public Lernset(){
-        begriffe = new ArrayList<Begriff>();
+        begriffe = new ArrayList<Card>();
     }
 
-    public Lernset(ArrayList<Begriff> _begriffArrayList){
+    public Lernset(ArrayList<Card> _begriffArrayList){
         begriffe = _begriffArrayList;
     }
 
-    public void addBegriff(Begriff _begriff){
+    public void addBegriff(Card _begriff){
         begriffe.add(_begriff);
     }
 
-    public void removeBegriff(Begriff _begriff){
+    public void removeBegriff(Card _begriff){
         begriffe.remove(_begriff);
     }
 }
