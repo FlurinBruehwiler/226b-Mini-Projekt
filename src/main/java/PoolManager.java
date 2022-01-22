@@ -12,7 +12,7 @@ public class PoolManager {
     }
 
     public void resetCards() {
-        for (Card b : lernset.begriffe) {
+        for (Card b : lernset.getAllCards()) {
             b.pool = POOL.nochNie;
         }
 
@@ -23,7 +23,9 @@ public class PoolManager {
 
     public Card nextCard() {
         Card begriff = activeCards.poll();
-        activeCards.offer(begriff);
+        if(begriff != null){
+            activeCards.offer(begriff);
+        }
 
         return begriff;
     }
@@ -44,7 +46,7 @@ public class PoolManager {
                 break;
         }
         if (begriff.repeatetFalse > 5) {
-            poolToMove = POOL.repeatLater;
+            poolToMove = POOL.nochNie;
             begriff.repeatetFalse = 0;
         }
         moveBegriffToPool(begriff, poolToMove);
@@ -65,8 +67,8 @@ public class PoolManager {
     ArrayList<Card> getPotentialCards() {
         ArrayList<Card> potentialCards = new ArrayList<>();
 
-        for (Card b : lernset.begriffe) {
-            if (b.pool != POOL.nochNie || b.pool != POOL.finished || b.pool != POOL.repeatLater) {
+        for (Card b : lernset.getAllCards()) {
+            if (b.pool != POOL.nochNie || b.pool != POOL.finished) {
                 potentialCards.add(b);
             }
         }
@@ -76,7 +78,7 @@ public class PoolManager {
 
     ArrayList<Card> getCardsInPool(POOL pool) {
         ArrayList<Card> begriffeInPool = new ArrayList<>();
-        for (Card c : lernset.begriffe) {
+        for (Card c : lernset.getAllCards()) {
             if (c.pool == pool) {
                 begriffeInPool.add(c);
             }
@@ -87,7 +89,10 @@ public class PoolManager {
 
     void addCardToMultipleChoice() {
         ArrayList<Card> potentialBegriffe = getCardsInPool(POOL.nochNie);
-        potentialBegriffe.addAll(getCardsInPool(POOL.repeatLater));
+
+        if(potentialBegriffe.size() == 0)
+            return;
+
         Random rand = new Random();
         int randomIndex = rand.nextInt(potentialBegriffe.size() - 1);
         moveBegriffToPool(potentialBegriffe.get(randomIndex), POOL.multipleChoice);

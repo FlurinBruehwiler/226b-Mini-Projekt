@@ -3,6 +3,5 @@ public enum POOL {
     multipleChoice,
     schriftlich,
     schriftlichFalse,
-    finished,
-    repeatLater
+    finished
 }

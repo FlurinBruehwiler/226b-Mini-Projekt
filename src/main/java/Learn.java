@@ -17,6 +17,12 @@ public class Learn {
         Scanner scan = new Scanner(System.in);
         while(true){
             Card aktuellerBegriff = poolManager.nextCard();
+
+            if(aktuellerBegriff == null){
+                System.out.println("Du bist fertig!!!");
+                return;
+            }
+
             boolean result;
             if(aktuellerBegriff.pool == POOL.multipleChoice){
                 result = multipleChoice(aktuellerBegriff, scan);
@@ -30,6 +36,9 @@ public class Learn {
                 System.out.println("Das war falsch, richt währe gewesen: " + aktuellerBegriff.definition);
                 System.out.print("Tippen sie die richtige Antwort ein: ");
             }
+
+            Scanner newScanner = new Scanner(System.in);
+            newScanner.nextLine();
 
             poolManager.moveBegriff(aktuellerBegriff, result);
         }
@@ -90,7 +99,7 @@ public class Learn {
         ArrayList<Card> begriffe = new ArrayList<>();
 
         while(begriffe.size() < amount){
-            Card b = lernset.begriffe.get(rand.nextInt(lernset.begriffe.size() - 1));
+            Card b = lernset.getCard(rand.nextInt(lernset.getAllCards().size() - 1));
             if(!begriffNotToInclude.equals(b)){
                 begriffe.add(b);
             }

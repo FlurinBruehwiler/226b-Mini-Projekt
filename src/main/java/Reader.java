@@ -12,13 +12,13 @@ public class Reader{
         File folder = new File(path);
 
         for (final File fileEntry : folder.listFiles()) {
-            readLernset(path + "\\" + fileEntry.getName());
+            readLernset(path, fileEntry.getName());
         }
     }
 
-    private void readLernset(String path) throws IOException {
-        BufferedReader reader = new BufferedReader(new FileReader(path));
-        Lernset lernset = new Lernset();
+    private void readLernset(String path, String name) throws IOException {
+        BufferedReader reader = new BufferedReader(new FileReader(path + "\\" + name));
+        Lernset lernset = new Lernset(name);
         String currentLine;
         while((currentLine = reader.readLine()) != null){
             var temp = currentLine.split("\\*");
