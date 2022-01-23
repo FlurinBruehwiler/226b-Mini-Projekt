@@ -7,6 +7,7 @@ import java.util.Scanner;
 public class Learn {
     PoolManager poolManager;
     Lernset lernset;
+    Input input = new Input();
 
     public Learn(Lernset lernset){
         poolManager = new PoolManager(lernset);
@@ -14,7 +15,6 @@ public class Learn {
     }
 
     public void startLearn() throws IOException {
-        Scanner scan = new Scanner(System.in);
         while(true){
             Card aktuellerBegriff = poolManager.nextCard();
 
@@ -25,9 +25,9 @@ public class Learn {
 
             boolean result;
             if(aktuellerBegriff.pool == POOL.multipleChoice){
-                result = multipleChoice(aktuellerBegriff, scan);
+                result = multipleChoice(aktuellerBegriff);
             }else{
-                result = schriftlich(aktuellerBegriff, scan);
+                result = schriftlich(aktuellerBegriff);
             }
 
             if(result){
@@ -44,7 +44,7 @@ public class Learn {
         }
     }
 
-    private boolean multipleChoice(Card card, Scanner scan){
+    private boolean multipleChoice(Card card){
         System.out.println("----------------------------");
         System.out.println("------Multiple Choice-------");
         System.out.println("----------------------------\n");
@@ -55,12 +55,12 @@ public class Learn {
 
         System.out.print("Wähle die richtige Definition aus: ");
 
-        int choice = scan.nextInt();
+        int choice = input.getValidIntegerInput(4);
         return choice == correctCard;
     }
 
 
-    private boolean schriftlich(Card card, Scanner scan){
+    private boolean schriftlich(Card card){
         System.out.println("----------------------------");
         System.out.println("--------Schriftlich---------");
         System.out.println("----------------------------\n");
@@ -68,6 +68,7 @@ public class Learn {
         System.out.println("Begriff: " + card.begriff);
         System.out.print("Geben sie die Definition ein: ");
 
+        Scanner scan = new Scanner(System.in);
         String input = scan.nextLine();
         return input == card.definition;
     }
@@ -94,7 +95,7 @@ public class Learn {
         System.out.println((index + 1) + ". " + begriff.definition);
     }
 
-    ArrayList<Card> getRandomBegriffe(Card begriffNotToInclude, int amount){
+    private ArrayList<Card> getRandomBegriffe(Card begriffNotToInclude, int amount){
         Random rand = new Random();
         ArrayList<Card> begriffe = new ArrayList<>();
 
