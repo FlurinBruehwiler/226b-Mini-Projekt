@@ -11,6 +11,9 @@ public class PoolManager {
         resetCards();
     }
 
+    /**
+     * fügt karten wieder in den Umlauf der Pools.
+     */
     public void resetCards() {
         for (Card b : lernset.getAllCards()) {
             b.pool = POOL.nochNie;
@@ -21,6 +24,10 @@ public class PoolManager {
         }
     }
 
+    /**
+     * geht zur nächsten Karte/Begriff.
+     * @return
+     */
     public Card nextCard() {
         Card begriff = activeCards.poll();
         if(begriff != null){
@@ -30,6 +37,11 @@ public class PoolManager {
         return begriff;
     }
 
+    /**
+     * Begriff/Karte wird in einen anderen Pool verschoben.
+     * @param begriff
+     * @param result
+     */
     public void moveBegriff(Card begriff, boolean result) {
         POOL poolToMove = POOL.nochNie;
         switch (begriff.pool) {
@@ -52,6 +64,11 @@ public class PoolManager {
         moveBegriffToPool(begriff, poolToMove);
     }
 
+    /**
+     * fügt Karten wieder hinzu.
+     * @param begriff
+     * @param pool
+     */
     void moveBegriffToPool(Card begriff, POOL pool) {
         begriff.pool = pool;
 
@@ -64,6 +81,10 @@ public class PoolManager {
         }
     }
 
+    /**
+     * holt die Begriffe/Karten welche möglich sind.
+     * @return mögliche Karten
+     */
     ArrayList<Card> getPotentialCards() {
         ArrayList<Card> potentialCards = new ArrayList<>();
 
@@ -76,6 +97,11 @@ public class PoolManager {
         return potentialCards;
     }
 
+    /**
+     * holt alle Karten/Begriffe in einem Pool
+     * @param pool
+     * @return Begriffe in einem Pool
+     */
     ArrayList<Card> getCardsInPool(POOL pool) {
         ArrayList<Card> begriffeInPool = new ArrayList<>();
         for (Card c : lernset.getAllCards()) {
@@ -87,6 +113,9 @@ public class PoolManager {
         return begriffeInPool;
     }
 
+    /**
+     * fügt Karte/Begriff zu Multiple Choice hinzu
+     */
     void addCardToMultipleChoice() {
         ArrayList<Card> potentialBegriffe = getCardsInPool(POOL.nochNie);
 

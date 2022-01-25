@@ -8,6 +8,11 @@ public class Reader{
         this.objCache = objCache;
     }
 
+    /**
+     * liest alle Lernsets Files
+     * @param path
+     * @throws IOException
+     */
     public void readLernsetFiles(String path) throws IOException {
         File folder = new File(path);
 
@@ -16,6 +21,11 @@ public class Reader{
         }
     }
 
+    /**
+     * ein einzelnes Lernset wird gelesen.
+     * @param path
+     * @param name
+     */
     private void readLernset(String path, String name) {
         try{
             BufferedReader reader = new BufferedReader(new FileReader(path + "\\" + name));

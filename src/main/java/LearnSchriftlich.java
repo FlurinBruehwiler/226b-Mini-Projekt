@@ -5,6 +5,11 @@ public class LearnSchriftlich extends LearnBasis{
         super(lernset);
     }
 
+    /**
+     * zeigt Schriftliche Aufgabe an und checkt ob richtig oder falsch.
+     * @param card
+     * @return ob Antwort richtig oder falsch ist.
+     */
     public boolean schriftlich(Card card){
         System.out.println("----------------------------");
         System.out.println("--------Schriftlich---------");

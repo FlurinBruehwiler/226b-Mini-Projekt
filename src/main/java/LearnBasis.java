@@ -8,6 +8,11 @@ public abstract class LearnBasis {
         this.lernset = lernset;
     }
 
+    /**
+     * dient für multiple choice.
+     * @param begriff
+     * @return
+     */
     public int displayCards(Card begriff){
         ArrayList<Card> begriffe = getRandomBegriffe(begriff, 3);
         begriffe.add(begriff);
@@ -26,10 +31,21 @@ public abstract class LearnBasis {
         return correctCard;
     }
 
+    /**
+     * gibt die Wörter aus mit dem index.
+     * @param begriff
+     * @param index
+     */
     public void displayCard(Card begriff, int index){
         System.out.println((index + 1) + ". " + begriff.definition);
     }
 
+    /**
+     * generiert randomBegriffe
+     * @param begriffNotToInclude
+     * @param amount
+     * @return
+     */
     public ArrayList<Card> getRandomBegriffe(Card begriffNotToInclude, int amount){
         Random rand = new Random();
         ArrayList<Card> begriffe = new ArrayList<>();

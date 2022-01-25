@@ -7,6 +7,11 @@ public class LearnMultipleChoice extends LearnBasis{
         this.input = input;
     }
 
+    /**
+     * zeigt multiple Choice Aufgabe an und checkt ob richtig oder falsch.
+     * @param card
+     * @return ob Antwort richtig oder falsch
+     */
     public boolean multipleChoice(Card card){
         System.out.println("----------------------------");
         System.out.println("------Multiple Choice-------");

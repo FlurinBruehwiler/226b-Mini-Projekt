@@ -2,6 +2,11 @@ import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class Input {
+    /**
+     * checkt ob eine Valide Zahl eingegeben wurde
+     * @param maxNumber
+     * @return
+     */
     int getValidIntegerInput(int maxNumber){
         while(true){
             Scanner scan = new Scanner(System.in);

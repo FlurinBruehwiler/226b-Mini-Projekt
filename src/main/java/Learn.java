@@ -18,6 +18,10 @@ public class Learn {
         learnMultipleChoice = new LearnMultipleChoice(lernset, input);
     }
 
+    /**
+     * steuert den ganzen Lernprozess
+     * @throws IOException
+     */
     public void startLearn() throws IOException {
         while(true){
             Card aktuellerBegriff = poolManager.nextCard();
