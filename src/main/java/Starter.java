@@ -4,7 +4,7 @@ public class Starter {
     public static void main(String[] args) throws IOException {
         Cache objCache = new Cache();
         Reader reader = new Reader(objCache);
-        reader.readLernsetFiles("E:\\Unity\\226b-Mini-Projekt\\Lernsets");
+        reader.readLernsetFiles("src/main/resources/test1.txt");
 
         MainMenu mainMenu = new MainMenu(objCache);
         mainMenu.showMainMenu();
