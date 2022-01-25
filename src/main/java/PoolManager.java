@@ -31,8 +31,11 @@ public class PoolManager {
     }
 
     public void moveBegriff(Card begriff, boolean result) {
-        Pool poolToMove = POOL.nochNie;
+        POOL poolToMove = POOL.nochNie;
         switch (begriff.pool) {
+            case multipleChoice:
+                poolToMove = result ? POOL.schriftlich : POOL.multipleChoice;
+                break;
             case schriftlich:
                 poolToMove = result ? POOL.finished : POOL.schriftlichFalse;
                 begriff.repeatetFalse += result ? 0 : 1;

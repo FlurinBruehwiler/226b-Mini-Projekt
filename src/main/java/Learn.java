@@ -40,7 +40,7 @@ public class Learn {
             Scanner newScanner = new Scanner(System.in);
             newScanner.nextLine();
 
-            aktuellerBegriff.pool.NextPool(result);
+            poolManager.moveBegriff(aktuellerBegriff, result);
         }
     }
 
